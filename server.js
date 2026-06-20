@@ -8,15 +8,16 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
-app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    process.env.FRONTEND_URL,
-  ].filter(Boolean),
-  methods: ['GET', 'POST', 'DELETE', 'PUT', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-}));
+// app.use(cors({
+//   origin: [
+//     'http://localhost:3000',
+//     process.env.FRONTEND_URL,
+//   ].filter(Boolean),
+//   methods: ['GET', 'POST', 'DELETE', 'PUT', 'PATCH'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true,
+// }));
+app.use(cors())
 app.use(express.json());
 
 // ─── DB Connection ────────────────────────────────────────────────────────────
